@@ -56,7 +56,7 @@ namespace Quarrel
                 if(result.CaptchaKey != null)
                 {
                     CaptchaView.Visibility = Visibility.Visible;
-                    CaptchaView.Navigate(new Uri("https://discordapp.com/login"));
+                    CaptchaView.Navigate(new Uri("https://discord.com/login"));
                     cusername = username;
                     cpassword = password;
                     MessageDialog md = new MessageDialog("Login in Failed, try again here", "Discord thinks you're a bot!");
@@ -198,7 +198,7 @@ namespace Quarrel
                 }
                 
             }
-            loginButton.IsEnabled = true;
+            loginButton.IsEnabled = false;
             ProgressRing.Visibility = Visibility.Collapsed;
             ProgressRing.IsActive = false;
             LoginText.Visibility = Visibility.Visible;
@@ -232,7 +232,7 @@ namespace Quarrel
             }
             else if(LoginWithToken.Tag.ToString() == "Discord")
             {
-                LoginWithToken.Content = "Login with Discord Token";
+                LoginWithToken.Content = "Login with Token";
                 LoginWithToken.Tag = "Token";
                 MFAuth.Visibility = Visibility.Collapsed;
                 TokenAuth.Visibility = Visibility.Collapsed;
