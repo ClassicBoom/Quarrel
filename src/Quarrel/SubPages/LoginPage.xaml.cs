@@ -65,15 +65,6 @@ namespace Quarrel.SubPages
                     //'<<token>>'",
                 });
 
-            // Delete token for future
-            await CaptchaView.InvokeScriptAsync(
-                "eval",
-                new[]
-                {
-                    @"iframe.contentWindow.localStorage.removeItem('token')"
-                });
-
-            return string.IsNullOrEmpty(token) ? string.Empty : token.Trim('"');
         }
     }
 }
